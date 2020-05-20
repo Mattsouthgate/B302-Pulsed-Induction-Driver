@@ -1,0 +1,18 @@
+﻿Field=#~Integer~#~50|Field=Comment~String~Comment~100|Field=Description~String~Description~100|Field=Designator~String~Designator~100|Field=Footprint~String~Footprint~100|Field=LibRef~String~LibRef~100|Field=Quantity~Integer~Quantity~100|ReportField=Currency~<none>|ReportField=ProductionQuantity~1|ReportField=ProjectFileName~PulseInductionDriver.PrjPcb|ReportField=ProjectFullPath~C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PrjPcb|ReportField=Title~Bill of Materials For Project [PulseInductionDriver.PrjPcb] (No PCB Document Selected)|ReportField=TotalQuantity~31|ReportField=ReportTime~15:50:24|ReportField=ReportDate~05/09/2016|ReportField=ReportDateTime~05/09/2016 15:50:24|ReportField=OutputName~Bill of Materials|ReportField=OutputType~BOM_PartType|ReportField=GeneratorName~BOM|ReportField=GeneratorDescription~Bill of Materials|ReportField=VariantName~None|ReportField=Address1~|ReportField=Address2~|ReportField=Address3~|ReportField=Address4~|ReportField=Application_BuildNumber~|ReportField=ApprovedBy~|ReportField=Author~|ReportField=CheckedBy~|ReportField=CompanyName~|ReportField=CurrentDate~05/09/2016|ReportField=CurrentTime~15:50:20|ReportField=Date~|ReportField=DocumentFullPathAndName~C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\B302 PI Coil Driver.SchDoc|ReportField=DocumentName~B302 PI Coil Driver.SchDoc|ReportField=DocumentNumber~|ReportField=DrawnBy~|ReportField=Engineer~|ReportField=ImagePath~|ReportField=ModifiedDate~05/09/2016|ReportField=Organization~|ReportField=ProjectName~PulseInductionDriver.PrjPcb|ReportField=Revision~|ReportField=Rule~|ReportField=SheetNumber~|ReportField=SheetTotal~|ReportField=Time~|ReportField=Title~|ReportField=DataSourceFileName~PulseInductionDriver.PrjPcb|ReportField=DataSourceFullPath~C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PrjPcb
+1|4.7uF|CAP 4.7uF 50V ±10% 1206 (3216 Metric) Thickness 1.9mm SMD|C1|CAPC1206(3216)190_N|CMP-1037-04923-1|1
+2|100nF|CAP 100nF 100V ±20% 1206 (3216 Metric) Thickness 1.45mm SMD|C2, C3|CAPC1206(3216)150_M|CMP-1037-04216-1|2
+3|Cap Polarised||C4|CAPPR5-10X12.5|Cap Polarised|1
+4|ECA-1HM470|CAP ALUM 47UF 50V 20% RADIAL|C5|PNSC-ECA-1HM470|CMP-1665-00013-1|1
+5|1N4732A|Zener Diode, 4.7V, 1W, 5%, -65 to 200 degC, 2-Pin DO-41, Body 2.72 x 5.2 mm, RoHS|D1, D2, D3, D4, D5, D6, D7, D8, D9, D10|FAIR-DO-41-2_V|CMP-0892-00030-1|10
+6|1N4002-T|1.0 A Rectifier, 15 pF, 100 V, -65 to 150 degC, 2-Pin DO-41 Plastic, RoHS, Tape and Reel|D11, D12|DIOD-DO-41-P-2_V|CMP-0639-00002-2|2
+7|Red||J1, J4|4mm socket right angled|4mm pcb socket r/a red|2
+8|Blue||J2, J3|4mm socket right angled|4mm pcb socket r/a blue|2
+9|Black||J5, J6|4mm socket right angled|4mm pcb socket r/a black|2
+10|LED_3mm|3mm LED|LED1|LED-Polarized - 3mm|LED_3mm|1
+11|Header 2|Header, 2-Pin|P1|HDR1X2|Header 2|1
+12|PCB BNC|PCB RA BNC Socket|P2|PCB BNC RA Socket|PCB BNC|1
+13|IPP110N20N3 G|N-Channel OptiMOS 3 Power-Transistor, 200 V VDS, 88 A ID, -55 to 175 degC, PG-TO220-3-1, Tube, Green|Q1|INF-PG-TO220-3-1_A_V|CMP-1091-00081-1|1
+14|1K 5% 1206(3216)|1K 0.25W 5% 1206 (3216 Metric)  SMD|R1|RESC1206(3216)_N|CMP-1014-00074-1|1
+15|3K3 5% 1206(3216)|3K3 0.25W 5% 1206 (3216 Metric)  SMD|R2|RESC1206(3216)_N|CMP-1014-00086-1|1
+16|13FR025E|RES CURRENT SENSE .025 OHM 3W|R3|OMTE-13FR025E|CMP-1678-00001-4|1
+17|TC4451VPA|12A High-Speed MOSFET Drivers, Inverting, Extended Temperature|U1|PDIP300-PA8|CMP-0137-00054-1|1

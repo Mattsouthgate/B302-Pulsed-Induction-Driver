@@ -1,0 +1,7 @@
+DRC Rules Export File for PCB: C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc
+RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=4.00
+RuleKind=Width|RuleName=Width|Scope=Board|Minimum=19.69
+RuleKind=ShortCircuit|RuleName=ShortCircuit|Scope=Board|Allowed=0
+RuleKind=Clearance|RuleName=Mechanical Clearance|Scope=Board|Minimum=19.69
+RuleKind=Clearance|RuleName=Polygon Clearance|Scope=Board|Minimum=11.81
+RuleKind=Clearance|RuleName=Clearance|Scope=Board|Minimum=7.87

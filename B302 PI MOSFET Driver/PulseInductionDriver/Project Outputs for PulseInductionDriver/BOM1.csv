@@ -1,0 +1,11 @@
+Designator,Description,Comment,Footprint,Quantity,Manufacturer 1,Manufacturer Part Number 1,Supplier 1,Supplier Order Qty 1,Supplier Part Number 1
+
+"C4, C5, J1, J2, J3, J4, J5, J6, LED1, P1, P2, R3","[NoValue], CAP ALUM 47UF 50V 20% RADIAL, [NoValue], [NoValue], [NoValue], [NoValue], [NoValue], [NoValue], 3mm LED, Header, 2-Pin, PCB RA BNC Socket, RES CURRENT SENSE .025 OHM 3W","Cap Polarised, ECA-1HM470, Red, Blue, Blue, Red, Black, Black, LED_3mm, Header 2, PCB BNC, 13FR025E","CAPPR5-10X12.5, PNSC-ECA-1HM470, 4mm socket right angled, 4mm socket right angled, 4mm socket right angled, 4mm socket right angled, 4mm socket right angled, 4mm socket right angled, LED-Polarized - 3mm, HDR1X2, PCB BNC RA Socket, OMTE-13FR025E","12","","","","",""
+"R2","3K3 0.25W 5% 1206 (3216 Metric)  SMD","3K3 5% 1206(3216)","RESC1206(3216)_N","1","Vishay","CRCW12063K30JNEA","Farnell","1","1540011"
+"U1","12A High-Speed MOSFET Drivers, Inverting, Extended Temperature","TC4451VPA","PDIP300-PA8","1","Microchip","TC4451VPA","Farnell","1","1557420"
+"R1","1K 0.25W 5% 1206 (3216 Metric)  SMD","1K 5% 1206(3216)","RESC1206(3216)_N","1","Vishay","CRCW12061K00JNEA","Farnell","1","1653077"
+"C1","CAP 4.7uF 50V ±10% 1206 (3216 Metric) Thickness 1.9mm SMD","4.7uF","CAPC1206(3216)190_N","1","Murata","GRM31CR71H475KA12L","Farnell","1","1735545"
+"D11, D12","1.0 A Rectifier, 15 pF, 100 V, -65 to 150 degC, 2-Pin DO-41 Plastic, RoHS, Tape and Reel","1N4002-T","DIOD-DO-41-P-2_V","2","Diodes Inc.","1N4002-T","Farnell","2","1858673"
+"D1, D2, D3, D4, D5, D6, D7, D8, D9, D10","Zener Diode, 4.7V, 1W, 5%, -65 to 200 degC, 2-Pin DO-41, Body 2.72 x 5.2 mm, RoHS","1N4732A","FAIR-DO-41-2_V","10","National Semiconductor","1N4732A","Farnell","10","1861446"
+"Q1","N-Channel OptiMOS 3 Power-Transistor, 200 V VDS, 88 A ID, -55 to 175 degC, PG-TO220-3-1, Tube, Green","IPP110N20N3 G","INF-PG-TO220-3-1_A_V","1","INFINEON","IPP110N20N3 G","Farnell","1","2212835"
+"C2, C3","CAP 100nF 100V ±20% 1206 (3216 Metric) Thickness 1.45mm SMD","100nF","CAPC1206(3216)150_M","2","AVX","12061C104MAT2A","Farnell","2","2332844"

@@ -1,0 +1,77 @@
+<?xml version = "1.0" ?>
+<?xml-stylesheet type="text/xsl" href="BOM1.xsl"?>
+<!DOCTYPE GRID [
+  <!ELEMENT GRID (BANDS, COLUMNS, ROWS*)>
+  <!ATTLIST GRID ExportVersion CDATA #REQUIRED>
+  <!ELEMENT BANDS (BAND*)>
+  <!ELEMENT BAND EMPTY>
+  <!ATTLIST BAND Index CDATA #REQUIRED>
+  <!ATTLIST BAND Caption CDATA #IMPLIED>
+  <!ELEMENT COLUMNS (COLUMN*)>
+  <!ELEMENT COLUMN EMPTY>
+  <!ATTLIST COLUMN Name CDATA #REQUIRED>
+  <!ATTLIST COLUMN Caption CDATA #IMPLIED>
+  <!ATTLIST COLUMN Index CDATA #REQUIRED>
+  <!ATTLIST COLUMN BandIndex CDATA #REQUIRED>
+  <!ATTLIST COLUMN RowIndex CDATA #REQUIRED>
+  <!ATTLIST COLUMN ColIndex CDATA #REQUIRED>
+  <!ATTLIST COLUMN Width CDATA #IMPLIED>
+  <!ELEMENT GROUP (GROUP*, ROW*)>
+  <!ATTLIST GROUP GroupText CDATA #IMPLIED>
+  <!ELEMENT ROWS (ROW*)>
+  <!ELEMENT ROW EMPTY>
+  <!ATTLIST ROW Alternative_Group_Name CDATA #IMPLIED>
+  <!ATTLIST ROW Comment CDATA #IMPLIED>
+  <!ATTLIST ROW Description CDATA #IMPLIED>
+  <!ATTLIST ROW Designator CDATA #IMPLIED>
+  <!ATTLIST ROW Footprint CDATA #IMPLIED>
+  <!ATTLIST ROW LibRef CDATA #IMPLIED>
+  <!ATTLIST ROW Quantity CDATA #IMPLIED>
+]>
+<GRID ExportVersion="1.0">
+  <BANDS>
+    <BAND Index="0" Caption=""></BAND>
+  </BANDS>
+  <COLUMNS>
+    <COLUMN Name="Alternative_Group_Name" Caption="Alternative Group Name" Index="0" BandIndex="0" RowIndex="0" ColIndex="0" Width="100"></COLUMN>
+    <COLUMN Name="Comment" Caption="Comment" Index="1" BandIndex="0" RowIndex="0" ColIndex="1" Width="100"></COLUMN>
+    <COLUMN Name="Description" Caption="Description" Index="2" BandIndex="0" RowIndex="0" ColIndex="2" Width="100"></COLUMN>
+    <COLUMN Name="Designator" Caption="Designator" Index="3" BandIndex="0" RowIndex="0" ColIndex="3" Width="100"></COLUMN>
+    <COLUMN Name="Footprint" Caption="Footprint" Index="4" BandIndex="0" RowIndex="0" ColIndex="4" Width="100"></COLUMN>
+    <COLUMN Name="LibRef" Caption="LibRef" Index="5" BandIndex="0" RowIndex="0" ColIndex="5" Width="100"></COLUMN>
+    <COLUMN Name="Quantity" Caption="Quantity" Index="6" BandIndex="0" RowIndex="0" ColIndex="6" Width="100"></COLUMN>
+  </COLUMNS>
+  <ROWS>
+    <ROW Alternative_Group_Name="" Comment="Cap Polarised" Description="" Designator="C4" Footprint="CAPPR5-10X12.5" LibRef="Cap Polarised" Quantity="1"></ROW>
+    <ROW Alternative_Group_Name="" Comment="Red" Description="" Designator="J1" Footprint="4mm socket right angled" LibRef="4mm pcb socket r/a red" Quantity="1"></ROW>
+    <ROW Alternative_Group_Name="" Comment="Blue" Description="" Designator="J2" Footprint="4mm socket right angled" LibRef="4mm pcb socket r/a blue" Quantity="1"></ROW>
+    <ROW Alternative_Group_Name="" Comment="Blue" Description="" Designator="J3" Footprint="4mm socket right angled" LibRef="4mm pcb socket r/a blue" Quantity="1"></ROW>
+    <ROW Alternative_Group_Name="" Comment="Red" Description="" Designator="J4" Footprint="4mm socket right angled" LibRef="4mm pcb socket r/a red" Quantity="1"></ROW>
+    <ROW Alternative_Group_Name="" Comment="Black" Description="" Designator="J5" Footprint="4mm socket right angled" LibRef="4mm pcb socket r/a black" Quantity="1"></ROW>
+    <ROW Alternative_Group_Name="" Comment="Black" Description="" Designator="J6" Footprint="4mm socket right angled" LibRef="4mm pcb socket r/a black" Quantity="1"></ROW>
+    <ROW Alternative_Group_Name="" Comment="1N4002-T" Description="1.0 A Rectifier, 15 pF, 100 V, -65 to 150 degC, 2-Pin DO-41 Plastic, RoHS, Tape and Reel" Designator="D11" Footprint="DIOD-DO-41-P-2_V" LibRef="CMP-0639-00002-2" Quantity="1"></ROW>
+    <ROW Alternative_Group_Name="" Comment="1N4002-T" Description="1.0 A Rectifier, 15 pF, 100 V, -65 to 150 degC, 2-Pin DO-41 Plastic, RoHS, Tape and Reel" Designator="D12" Footprint="DIOD-DO-41-P-2_V" LibRef="CMP-0639-00002-2" Quantity="1"></ROW>
+    <ROW Alternative_Group_Name="" Comment="1K 5&#37; 1206&#40;3216&#41;" Description="1K 0.25W 5&#37; 1206 &#40;3216 Metric&#41;  SMD" Designator="R1" Footprint="RESC1206&#40;3216&#41;_N" LibRef="CMP-1014-00074-1" Quantity="1"></ROW>
+    <ROW Alternative_Group_Name="" Comment="3K3 5&#37; 1206&#40;3216&#41;" Description="3K3 0.25W 5&#37; 1206 &#40;3216 Metric&#41;  SMD" Designator="R2" Footprint="RESC1206&#40;3216&#41;_N" LibRef="CMP-1014-00086-1" Quantity="1"></ROW>
+    <ROW Alternative_Group_Name="" Comment="LED_3mm" Description="3mm LED" Designator="LED1" Footprint="LED-Polarized - 3mm" LibRef="LED_3mm" Quantity="1"></ROW>
+    <ROW Alternative_Group_Name="" Comment="TC4451VPA" Description="12A High-Speed MOSFET Drivers, Inverting, Extended Temperature" Designator="U1" Footprint="PDIP300-PA8" LibRef="CMP-0137-00054-1" Quantity="1"></ROW>
+    <ROW Alternative_Group_Name="" Comment="4.7uF" Description="CAP 4.7uF 50V &#177;10&#37; 1206 &#40;3216 Metric&#41; Thickness 1.9mm SMD" Designator="C1" Footprint="CAPC1206&#40;3216&#41;190_N" LibRef="CMP-1037-04923-1" Quantity="1"></ROW>
+    <ROW Alternative_Group_Name="" Comment="100nF" Description="CAP 100nF 100V &#177;20&#37; 1206 &#40;3216 Metric&#41; Thickness 1.45mm SMD" Designator="C2" Footprint="CAPC1206&#40;3216&#41;150_M" LibRef="CMP-1037-04216-1" Quantity="1"></ROW>
+    <ROW Alternative_Group_Name="" Comment="100nF" Description="CAP 100nF 100V &#177;20&#37; 1206 &#40;3216 Metric&#41; Thickness 1.45mm SMD" Designator="C3" Footprint="CAPC1206&#40;3216&#41;150_M" LibRef="CMP-1037-04216-1" Quantity="1"></ROW>
+    <ROW Alternative_Group_Name="" Comment="ECA-1HM470" Description="CAP ALUM 47UF 50V 20&#37; RADIAL" Designator="C5" Footprint="PNSC-ECA-1HM470" LibRef="CMP-1665-00013-1" Quantity="1"></ROW>
+    <ROW Alternative_Group_Name="" Comment="Header 2" Description="Header, 2-Pin" Designator="P1" Footprint="HDR1X2" LibRef="Header 2" Quantity="1"></ROW>
+    <ROW Alternative_Group_Name="" Comment="IPP110N20N3 G" Description="N-Channel OptiMOS 3 Power-Transistor, 200&#160;V VDS, 88&#160;A ID, -55 to 175 degC, PG-TO220-3-1, Tube, Green" Designator="Q1" Footprint="INF-PG-TO220-3-1_A_V" LibRef="CMP-1091-00081-1" Quantity="1"></ROW>
+    <ROW Alternative_Group_Name="" Comment="PCB BNC" Description="PCB RA BNC Socket" Designator="P2" Footprint="PCB BNC RA Socket" LibRef="PCB BNC" Quantity="1"></ROW>
+    <ROW Alternative_Group_Name="" Comment="13FR025E" Description="RES CURRENT SENSE .025 OHM 3W" Designator="R3" Footprint="OMTE-13FR025E" LibRef="CMP-1678-00001-4" Quantity="1"></ROW>
+    <ROW Alternative_Group_Name="" Comment="1N4732A" Description="Zener Diode, 4.7V, 1W, 5&#37;, -65 to 200 degC, 2-Pin DO-41, Body 2.72 x 5.2 mm, RoHS" Designator="D1" Footprint="FAIR-DO-41-2_V" LibRef="CMP-0892-00030-1" Quantity="1"></ROW>
+    <ROW Alternative_Group_Name="" Comment="1N4732A" Description="Zener Diode, 4.7V, 1W, 5&#37;, -65 to 200 degC, 2-Pin DO-41, Body 2.72 x 5.2 mm, RoHS" Designator="D2" Footprint="FAIR-DO-41-2_V" LibRef="CMP-0892-00030-1" Quantity="1"></ROW>
+    <ROW Alternative_Group_Name="" Comment="1N4732A" Description="Zener Diode, 4.7V, 1W, 5&#37;, -65 to 200 degC, 2-Pin DO-41, Body 2.72 x 5.2 mm, RoHS" Designator="D3" Footprint="FAIR-DO-41-2_V" LibRef="CMP-0892-00030-1" Quantity="1"></ROW>
+    <ROW Alternative_Group_Name="" Comment="1N4732A" Description="Zener Diode, 4.7V, 1W, 5&#37;, -65 to 200 degC, 2-Pin DO-41, Body 2.72 x 5.2 mm, RoHS" Designator="D4" Footprint="FAIR-DO-41-2_V" LibRef="CMP-0892-00030-1" Quantity="1"></ROW>
+    <ROW Alternative_Group_Name="" Comment="1N4732A" Description="Zener Diode, 4.7V, 1W, 5&#37;, -65 to 200 degC, 2-Pin DO-41, Body 2.72 x 5.2 mm, RoHS" Designator="D5" Footprint="FAIR-DO-41-2_V" LibRef="CMP-0892-00030-1" Quantity="1"></ROW>
+    <ROW Alternative_Group_Name="" Comment="1N4732A" Description="Zener Diode, 4.7V, 1W, 5&#37;, -65 to 200 degC, 2-Pin DO-41, Body 2.72 x 5.2 mm, RoHS" Designator="D6" Footprint="FAIR-DO-41-2_V" LibRef="CMP-0892-00030-1" Quantity="1"></ROW>
+    <ROW Alternative_Group_Name="" Comment="1N4732A" Description="Zener Diode, 4.7V, 1W, 5&#37;, -65 to 200 degC, 2-Pin DO-41, Body 2.72 x 5.2 mm, RoHS" Designator="D7" Footprint="FAIR-DO-41-2_V" LibRef="CMP-0892-00030-1" Quantity="1"></ROW>
+    <ROW Alternative_Group_Name="" Comment="1N4732A" Description="Zener Diode, 4.7V, 1W, 5&#37;, -65 to 200 degC, 2-Pin DO-41, Body 2.72 x 5.2 mm, RoHS" Designator="D8" Footprint="FAIR-DO-41-2_V" LibRef="CMP-0892-00030-1" Quantity="1"></ROW>
+    <ROW Alternative_Group_Name="" Comment="1N4732A" Description="Zener Diode, 4.7V, 1W, 5&#37;, -65 to 200 degC, 2-Pin DO-41, Body 2.72 x 5.2 mm, RoHS" Designator="D9" Footprint="FAIR-DO-41-2_V" LibRef="CMP-0892-00030-1" Quantity="1"></ROW>
+    <ROW Alternative_Group_Name="" Comment="1N4732A" Description="Zener Diode, 4.7V, 1W, 5&#37;, -65 to 200 degC, 2-Pin DO-41, Body 2.72 x 5.2 mm, RoHS" Designator="D10" Footprint="FAIR-DO-41-2_V" LibRef="CMP-0892-00030-1" Quantity="1"></ROW>
+  </ROWS>
+</GRID>

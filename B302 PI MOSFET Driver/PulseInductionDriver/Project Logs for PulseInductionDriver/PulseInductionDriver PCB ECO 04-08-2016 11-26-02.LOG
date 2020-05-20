@@ -1,0 +1,6 @@
+Added Component: Designator=C5(PNSC-ECA-1HM470)
+Added Component: Designator=(PNSC-ECA-1HM470)
+Added Pin To Net: NetName=+12V Pin=C5-1
+Added Pin To Net: NetName=GND Pin=C5-2
+Added Member To Class: ClassName=B302 PI Coil Driver Member=Component C5 CAP 100nF 100V 1206(3216)
+Added Member To Class: ClassName=B302 PI Coil Driver Member=Component  ECA-1HM470

@@ -1,0 +1,23 @@
+Bill of Material for 
+On 04/08/2016 at 14:43:22
+
+ Comment             Pattern     Quantity  Components
+------------------------------------------------------------------------------
+ 100nF               CAPC1206(3216)150_M    2    C2, C3                       CAP 100nF 100V ±20% 1206 (3216 Metric) Thickness 1.45mm SMD 
+ 13FR025E            OMTE-13FR025E    1    R3                           RES CURRENT SENSE .025 OHM 3W 
+ 1K 5% 1206(3216)    RESC1206(3216)_N    1    R1                           1K 0.25W 5% 1206 (3216 Metric)  SMD 
+ 1N4002-T            DIOD-DO-41-P-2_V    2    D11, D12                     1.0 A Rectifier, 15 pF, 100 V, -65 to 150 degC, 2-Pin DO-41 Plastic, RoHS, Tape and Reel 
+ 1N4732A             FAIR-DO-41-2_V   10    D1, D2, D3, D4, D5, D6, D7   Zener Diode, 4.7V, 1W, 5%, -65 to 200 degC, 2-Pin DO-41, Body 2.72 x 5.2 mm, RoHS 
+                                           D8, D9, D10
+ 3K3 5% 1206(3216)   RESC1206(3216)_N    1    R2                           3K3 0.25W 5% 1206 (3216 Metric)  SMD 
+ 4.7uF               CAPC1206(3216)190_N    1    C1                           CAP 4.7uF 50V ±10% 1206 (3216 Metric) Thickness 1.9mm SMD 
+ Black               4mm socket right angled    2    J5, J6                                            
+ Blue                4mm socket right angled    2    J2, J3                                            
+ Cap Polarised       CAPPR5-10X12.5    1    C4                                                
+ ECA-1HM470          PNSC-ECA-1HM470    1    C5                           CAP ALUM 47UF 50V 20% RADIAL 
+ Header 2            HDR1X2           1    P1                           Header, 2-Pin        
+ IPP110N20N3 G       INF-PG-TO220-3-1_A_V    1    Q1                           N-Channel OptiMOS 3 Power-Transistor, 200 V VDS, 88 A ID, -55 to 175 degC, PG-TO220-3-1, Tube, Green 
+ LED_3mm             LED-Polarized - 3mm    1    LED1                         3mm LED              
+ PCB BNC             PCB BNC RA Socket    1    P2                           PCB RA BNC Socket    
+ Red                 4mm socket right angled    2    J1, J4                                            
+ TC4451VPA           PDIP300-PA8      1    U1                           12A High-Speed MOSFET Drivers, Inverting, Extended Temperature 

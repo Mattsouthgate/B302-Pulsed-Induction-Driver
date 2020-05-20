@@ -1,0 +1,10 @@
+Change Component DesignItemId : Designator=R1 Old DesignItemId=Res1 New DesignItemId=CMP-1014-00074-1
+Change Component DesignItemId : Designator=R2 Old DesignItemId=Res2 New DesignItemId=CMP-1014-00086-1
+Change Component Footprint: Designator=R1 Old Footprint=AXIAL-0.3 New Footprint=RESC1206(3216)_N
+Change Component Footprint: Designator=R2 Old Footprint=AXIAL-0.3 New Footprint=RESC1206(3216)_N
+Change Component Comment : Designator=R1 Old Comment=1k New Comment=1K 5% 1206(3216)
+Change Component Comment : Designator=R2 Old Comment=3k New Comment=3K3 5% 1206(3216)
+Change Component Library : Designator=R1 Old Library=Altium Content Vault New Library=Altium Content Vault
+Change Component Library : Designator=R2 Old Library=Altium Content Vault New Library=Altium Content Vault
+Added Component: Designator=R4(OMTE-13FR025E)
+Added Member To Class: ClassName=B302 PI Coil Driver Member=Component R4 13FR025E

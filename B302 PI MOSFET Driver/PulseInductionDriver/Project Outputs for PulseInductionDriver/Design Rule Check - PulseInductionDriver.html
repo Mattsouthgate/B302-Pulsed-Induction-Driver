@@ -1,0 +1,454 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 8em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD16\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">04/08/2016</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">14:39:46</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:02</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc" class="file"><acronym title="C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc">C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">38</td></tr>
+</table>
+</td>
+</table><a name="ID3FQVEAIHQWL0G0DIFMH5ZZE2WWDVQWKTCJXILU1HDGQBZWQV3L"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID52CVIX5KBJALLLII5NWFQQEOMIUZEBC3DHTRT3IL1K5BJ0O0YAJI">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID013R4ZWEHMM4JNB0YN2RIL1W0LYGQBHYPAXKPCMFPYGW00FXVHCI">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID2KMAMQWY5C3MFCLUP1EPZSHNHCJSIXG4S51ID1PKEEZGIAT2MKZB">Silk to Silk (Clearance=0.254mm) (All),(All)</a></td>
+<td class="column2">7</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDIPOJIEFRZ4SPPWTPU3MV3YI5WIRZP0ZFGJICE5BGRDSCEEVUIPTO">Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)</a></td>
+<td class="column2">31</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDADKHZIR23BI4LITPS0ET2ZX52IIDRBZFRY0ZPLEILQAM5UGCVHS">Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID1LBF4B1KVLOOOUI02UQXU2345BLT5JHYDJB430BZNIF35QEPJBMC">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDRTKZHE4UQDIJB5JDYKTUD2J4VMMTEUV5WSY5V1OWIYKQRHP15EIL">Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID44LH0HUIV43VBRKYPPVRHFX3AC1TCJPAZ5XN2GNT1BGNYLEPO0EL">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID4GLAGY0RK2KZKAIMSUM2NL1ERBENS0ESFJ0USSBQJV4DZKM1QWHJ">Width Constraint (Min=0.5mm) (Max=5mm) (Preferred=1mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID1ZWSQAHUS14PCJRBXUZEU1PSSNMRTRWPUNEJBEJ5FBJP41T0LGRC">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDGYS53PVKIWHOPVMVQGYAQURKYP5NAG3UFKRBOEPCS5HWMPNS20">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDB2IJN3250RR4EITT5WSMLIXXCF3KDQCLIOG0ZCKNQ2F22A4CG5K">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDOWI2EFHIWOFMO15BONTCUYVQJMCEXRT2SVNF1IBKBKNKKHRWP3JH">Clearance Constraint (Gap=0.5mm) (InPoly),(OnLayer('Keep-Out Layer'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDEDXTPR3YCYZ4DYFPV5DNA2I3JOKMDV2QB0IEGSIHUO3NAFEEC23I">Clearance Constraint (Gap=0.3mm) (InPolygon),(IsPad)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDIU0X3WK05NCENJNC3FZ0OFLGTHZCHZSQ4M3VIIMLLRC1ETMT1CFH">Clearance Constraint (Gap=0.2mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">38</td>
+</tr>
+</table><br><a name="ID2KMAMQWY5C3MFCLUP1EPZSHNHCJSIXG4S51ID1PKEEZGIAT2MKZB"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk to Silk (Clearance=0.254mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4318.473mil|Location2.X=4326.14mil|Location1.Y=3603.253mil|Location2.Y=3610.919mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4318.473mil|Location2.X=4326.14mil|Location1.Y=3603.253mil|Location2.Y=3610.919mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "D1" (108.001mm,90.043mm) on Top Overlay And Track (109.6mm,91.62mm)(129.1mm,91.62mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4662.995mil|Location2.X=4670.662mil|Location1.Y=3603.253mil|Location2.Y=3610.919mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4662.995mil|Location2.X=4670.662mil|Location1.Y=3603.253mil|Location2.Y=3610.919mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "D3" (118.161mm,90.043mm) on Top Overlay And Track (109.6mm,91.62mm)(129.1mm,91.62mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4862.995mil|Location2.X=4870.662mil|Location1.Y=3603.253mil|Location2.Y=3610.919mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4862.995mil|Location2.X=4870.662mil|Location1.Y=3603.253mil|Location2.Y=3610.919mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "D4" (123.241mm,90.043mm) on Top Overlay And Track (109.6mm,91.62mm)(129.1mm,91.62mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5078.845mil|Location2.X=5086.511mil|Location1.Y=3603.253mil|Location2.Y=3610.919mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5078.845mil|Location2.X=5086.511mil|Location1.Y=3603.253mil|Location2.Y=3610.919mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "D5" (128.321mm,90.043mm) on Top Overlay And Track (109.6mm,91.62mm)(129.1mm,91.62mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4462.995mil|Location2.X=4470.662mil|Location1.Y=3603.253mil|Location2.Y=3610.919mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4462.995mil|Location2.X=4470.662mil|Location1.Y=3603.253mil|Location2.Y=3610.919mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "D2" (113.081mm,90.043mm) on Top Overlay And Track (109.6mm,91.62mm)(129.1mm,91.62mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5078.845mil|Location2.X=5086.511mil|Location1.Y=3603.253mil|Location2.Y=3610.919mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5078.845mil|Location2.X=5086.511mil|Location1.Y=3603.253mil|Location2.Y=3610.919mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "D5" (128.321mm,90.043mm) on Top Overlay And Track (129.1mm,91.62mm)(129.1mm,101.42mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4313.911mil|Location2.X=4321.577mil|Location1.Y=3600.469mil|Location2.Y=3608.135mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4313.911mil|Location2.X=4321.577mil|Location1.Y=3600.469mil|Location2.Y=3608.135mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "D1" (108.001mm,90.043mm) on Top Overlay And Track (109.6mm,91.62mm)(109.6mm,101.42mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDIPOJIEFRZ4SPPWTPU3MV3YI5WIRZP0ZFGJICE5BGRDSCEEVUIPTO"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3567.317mil|Location2.X=3574.984mil|Location1.Y=2452.896mil|Location2.Y=2460.563mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3567.317mil|Location2.X=3574.984mil|Location1.Y=2452.896mil|Location2.Y=2460.563mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Arc (91.44mm,60.642mm) on Top Overlay And Pad LED1-A(91.44mm,62.23mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3744.375mil|Location2.X=3755.625mil|Location1.Y=3482.761mil|Location2.Y=3494.011mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3744.375mil|Location2.X=3755.625mil|Location1.Y=3482.761mil|Location2.Y=3494.011mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.15mm &lt; 0.254mm) Between Arc (95.25mm,88.93mm) on Top Overlay And Pad U1-1(95.25mm,87.63mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.15mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2717.426mil|Location2.X=2725.092mil|Location1.Y=1696.167mil|Location2.Y=1703.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2717.426mil|Location2.X=2725.092mil|Location1.Y=1696.167mil|Location2.Y=1703.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Track (69.02mm,38.28mm)(69.02mm,48.08mm) on Top Overlay And Pad J6-1(71.12mm,43.18mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3477.393mil|Location2.X=3485.059mil|Location1.Y=1696.167mil|Location2.Y=1703.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3477.393mil|Location2.X=3485.059mil|Location1.Y=1696.167mil|Location2.Y=1703.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Track (88.52mm,38.28mm)(88.52mm,48.08mm) on Top Overlay And Pad J6-1(86.42mm,43.18mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3569.676mil|Location2.X=3577.343mil|Location1.Y=2333.926mil|Location2.Y=2341.592mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3569.676mil|Location2.X=3577.343mil|Location1.Y=2333.926mil|Location2.Y=2341.592mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Track (89.981mm,59.418mm)(90.673mm,59.418mm) on Top Overlay And Pad LED1-K(91.44mm,59.055mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3623.18mil|Location2.X=3630.847mil|Location1.Y=2334.344mil|Location2.Y=2342.01mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3623.18mil|Location2.X=3630.847mil|Location1.Y=2334.344mil|Location2.Y=2342.01mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Track (92.177mm,59.411mm)(92.887mm,59.411mm) on Top Overlay And Pad LED1-K(91.44mm,59.055mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5075.031mil|Location2.X=5082.698mil|Location1.Y=1696.167mil|Location2.Y=1703.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5075.031mil|Location2.X=5082.698mil|Location1.Y=1696.167mil|Location2.Y=1703.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Track (129.1mm,38.28mm)(129.1mm,48.08mm) on Top Overlay And Pad J5-1(127mm,43.18mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4315.064mil|Location2.X=4322.73mil|Location1.Y=1696.167mil|Location2.Y=1703.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4315.064mil|Location2.X=4322.73mil|Location1.Y=1696.167mil|Location2.Y=1703.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Track (109.6mm,38.28mm)(109.6mm,48.08mm) on Top Overlay And Pad J5-1(111.7mm,43.18mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2717.426mil|Location2.X=2725.092mil|Location1.Y=2896.167mil|Location2.Y=2903.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2717.426mil|Location2.X=2725.092mil|Location1.Y=2896.167mil|Location2.Y=2903.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Track (69.02mm,68.76mm)(69.02mm,78.56mm) on Top Overlay And Pad J4-1(71.12mm,73.66mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3477.393mil|Location2.X=3485.059mil|Location1.Y=2896.167mil|Location2.Y=2903.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3477.393mil|Location2.X=3485.059mil|Location1.Y=2896.167mil|Location2.Y=2903.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Track (88.52mm,68.76mm)(88.52mm,78.56mm) on Top Overlay And Pad J4-1(86.42mm,73.66mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4000.497mil|Location2.X=4008.163mil|Location1.Y=3131.365mil|Location2.Y=3139.031mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4000.497mil|Location2.X=4008.163mil|Location1.Y=3131.365mil|Location2.Y=3139.031mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Track (101.71mm,78.67mm)(101.71mm,88.97mm) on Top Overlay And Pad U1-5(102.87mm,80.01mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4000.497mil|Location2.X=4008.163mil|Location1.Y=3231.365mil|Location2.Y=3239.031mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4000.497mil|Location2.X=4008.163mil|Location1.Y=3231.365mil|Location2.Y=3239.031mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Track (101.71mm,78.67mm)(101.71mm,88.97mm) on Top Overlay And Pad U1-6(102.87mm,82.55mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4000.497mil|Location2.X=4008.163mil|Location1.Y=3331.365mil|Location2.Y=3339.031mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4000.497mil|Location2.X=4008.163mil|Location1.Y=3331.365mil|Location2.Y=3339.031mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Track (101.71mm,78.67mm)(101.71mm,88.97mm) on Top Overlay And Pad U1-7(102.87mm,85.09mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4000.497mil|Location2.X=4008.163mil|Location1.Y=3431.365mil|Location2.Y=3439.031mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4000.497mil|Location2.X=4008.163mil|Location1.Y=3431.365mil|Location2.Y=3439.031mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Track (101.71mm,78.67mm)(101.71mm,88.97mm) on Top Overlay And Pad U1-8(102.87mm,87.63mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3791.837mil|Location2.X=3799.503mil|Location1.Y=3139.354mil|Location2.Y=3147.021mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3791.837mil|Location2.X=3799.503mil|Location1.Y=3139.354mil|Location2.Y=3147.021mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Track (96.41mm,78.67mm)(96.41mm,88.97mm) on Top Overlay And Pad U1-4(95.25mm,80.01mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3791.837mil|Location2.X=3799.503mil|Location1.Y=3239.354mil|Location2.Y=3247.021mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3791.837mil|Location2.X=3799.503mil|Location1.Y=3239.354mil|Location2.Y=3247.021mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Track (96.41mm,78.67mm)(96.41mm,88.97mm) on Top Overlay And Pad U1-3(95.25mm,82.55mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3791.837mil|Location2.X=3799.503mil|Location1.Y=3339.354mil|Location2.Y=3347.021mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3791.837mil|Location2.X=3799.503mil|Location1.Y=3339.354mil|Location2.Y=3347.021mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Track (96.41mm,78.67mm)(96.41mm,88.97mm) on Top Overlay And Pad U1-2(95.25mm,85.09mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3791.837mil|Location2.X=3799.503mil|Location1.Y=3410.734mil|Location2.Y=3418.4mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3791.837mil|Location2.X=3799.503mil|Location1.Y=3410.734mil|Location2.Y=3418.4mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Track (96.41mm,78.67mm)(96.41mm,88.97mm) on Top Overlay And Pad U1-1(95.25mm,87.63mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5075.031mil|Location2.X=5082.698mil|Location1.Y=2196.167mil|Location2.Y=2203.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5075.031mil|Location2.X=5082.698mil|Location1.Y=2196.167mil|Location2.Y=2203.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Track (129.1mm,50.98mm)(129.1mm,60.78mm) on Top Overlay And Pad J3-1(127mm,55.88mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4315.064mil|Location2.X=4322.73mil|Location1.Y=2196.167mil|Location2.Y=2203.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4315.064mil|Location2.X=4322.73mil|Location1.Y=2196.167mil|Location2.Y=2203.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Track (109.6mm,50.98mm)(109.6mm,60.78mm) on Top Overlay And Pad J3-1(111.7mm,55.88mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3301.598mil|Location2.X=3312.848mil|Location1.Y=3394.375mil|Location2.Y=3405.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3301.598mil|Location2.X=3312.848mil|Location1.Y=3394.375mil|Location2.Y=3405.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.167mm &lt; 0.254mm) Between Track (83.82mm,85.09mm)(83.82mm,90.17mm) on Top Overlay And Pad P1-2(85.09mm,86.36mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.167mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3387.152mil|Location2.X=3398.402mil|Location1.Y=3394.375mil|Location2.Y=3405.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3387.152mil|Location2.X=3398.402mil|Location1.Y=3394.375mil|Location2.Y=3405.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.167mm &lt; 0.254mm) Between Track (86.36mm,85.09mm)(86.36mm,90.17mm) on Top Overlay And Pad P1-2(85.09mm,86.36mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.167mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3344.375mil|Location2.X=3355.625mil|Location1.Y=3351.598mil|Location2.Y=3362.848mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3344.375mil|Location2.X=3355.625mil|Location1.Y=3351.598mil|Location2.Y=3362.848mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.167mm &lt; 0.254mm) Between Track (83.82mm,85.09mm)(86.36mm,85.09mm) on Top Overlay And Pad P1-2(85.09mm,86.36mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.167mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3301.658mil|Location2.X=3312.908mil|Location1.Y=3487.562mil|Location2.Y=3498.812mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3301.658mil|Location2.X=3312.908mil|Location1.Y=3487.562mil|Location2.Y=3498.812mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.17mm &lt; 0.254mm) Between Track (83.82mm,85.09mm)(83.82mm,90.17mm) on Top Overlay And Pad P1-1(85.09mm,88.9mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.17mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3387.091mil|Location2.X=3398.341mil|Location1.Y=3455.005mil|Location2.Y=3466.255mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3387.091mil|Location2.X=3398.341mil|Location1.Y=3455.005mil|Location2.Y=3466.255mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.17mm &lt; 0.254mm) Between Track (86.36mm,85.09mm)(86.36mm,90.17mm) on Top Overlay And Pad P1-1(85.09mm,88.9mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.17mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3305.005mil|Location2.X=3316.255mil|Location1.Y=3537.091mil|Location2.Y=3548.341mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3305.005mil|Location2.X=3316.255mil|Location1.Y=3537.091mil|Location2.Y=3548.341mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.17mm &lt; 0.254mm) Between Track (83.82mm,90.17mm)(86.36mm,90.17mm) on Top Overlay And Pad P1-1(85.09mm,88.9mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.17mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4331.554mil|Location2.X=4342.804mil|Location1.Y=2484.848mil|Location2.Y=2496.098mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4331.554mil|Location2.X=4342.804mil|Location1.Y=2484.848mil|Location2.Y=2496.098mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.004mm &lt; 0.254mm) Between Text "J3" (109.755mm,61.636mm) on Top Overlay And Pad D10-2(109.22mm,64.08mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0.004mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5075.031mil|Location2.X=5082.698mil|Location1.Y=3796.167mil|Location2.Y=3803.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5075.031mil|Location2.X=5082.698mil|Location1.Y=3796.167mil|Location2.Y=3803.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Track (129.1mm,91.62mm)(129.1mm,101.42mm) on Top Overlay And Pad J2-1(127mm,96.52mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4315.064mil|Location2.X=4322.73mil|Location1.Y=3796.167mil|Location2.Y=3803.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4315.064mil|Location2.X=4322.73mil|Location1.Y=3796.167mil|Location2.Y=3803.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Track (109.6mm,91.62mm)(109.6mm,101.42mm) on Top Overlay And Pad J2-1(111.7mm,96.52mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5075.031mil|Location2.X=5082.698mil|Location1.Y=4296.167mil|Location2.Y=4303.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5075.031mil|Location2.X=5082.698mil|Location1.Y=4296.167mil|Location2.Y=4303.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Track (129.1mm,104.32mm)(129.1mm,114.12mm) on Top Overlay And Pad J1-1(127mm,109.22mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4315.064mil|Location2.X=4322.73mil|Location1.Y=4296.167mil|Location2.Y=4303.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Files\Dropbox\Work Files\PCB\B302 PI MOSFET Driver\PulseInductionDriver\PulseInductionDriver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4315.064mil|Location2.X=4322.73mil|Location1.Y=4296.167mil|Location2.Y=4303.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Track (109.6mm,104.32mm)(109.6mm,114.12mm) on Top Overlay And Pad J1-1(111.7mm,109.22mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>
