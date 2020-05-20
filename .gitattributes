@@ -1,2 +1,14 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+*.zip 		-text binary
+*.schdoc 	-text binary
+*.xls 		-text binary
+*.pcbdoc	-text binary
+*.pdf		-text binary
+*.outjob	-text binary
+*.lib		-text binary
+*.intlib	-text binary
+*.step		-text binary
+*.xlsx		-text binary
+
+
+
+
